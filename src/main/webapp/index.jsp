@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta http-equiv="refresh" content="0; url=home" />
+<meta http-equiv="refresh" content="0; url=admin" />
 <title>Đang chuyển trang ...</title>
 </head>
 </html> 

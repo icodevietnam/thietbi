@@ -35,7 +35,7 @@
 
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<div class="panel-title text-center">EXTERNAL EXAMINIER</div>
+					<div class="panel-title text-center">Device Manager</div>
 				</div>
 
 				<div class="panel-body">

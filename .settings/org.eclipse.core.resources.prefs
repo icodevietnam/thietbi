@@ -1,9 +1,15 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/icoding/controller/AuthenticationController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/ContractController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/ContractDetailController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/DepartmentController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/DeviceController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/DeviceTypeController.java=UTF-8
 encoding//src/main/java/com/icoding/controller/HomeController.java=UTF-8
 encoding//src/main/java/com/icoding/controller/ProfileController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/RepairItemController.java=UTF-8
 encoding//src/main/java/com/icoding/controller/RoleController.java=UTF-8
-encoding//src/main/java/com/icoding/controller/StudentController.java=UTF-8
+encoding//src/main/java/com/icoding/controller/UsedItemController.java=UTF-8
 encoding//src/main/java/com/icoding/controller/UserController.java=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8
 encoding//src/main/webapp/template/default/footer.jsp=UTF-8

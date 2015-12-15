@@ -60,43 +60,6 @@ public class User {
 					@JoinColumn(name = "role_id", referencedColumnName = "id") })
 	private Role role;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "student", cascade = CascadeType.ALL)
-	@JsonIgnore
-	private Certificated certificated;
-
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "ee")
-	@Fetch(FetchMode.SELECT)
-	private List<Program> listProgramsByEE;
-
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "pl")
-	@Fetch(FetchMode.SELECT)
-	private List<Program> listProgramsByPL;
-
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
-	@Fetch(FetchMode.SELECT)
-	private List<Report> listReportsByStudent;
-
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-	@Fetch(FetchMode.SELECT)
-	private List<Comment> listComments;
-
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
-	@Fetch(FetchMode.SELECT)
-	private List<Rating> listRatings;
-
-	public List<Rating> getListRatings() {
-		return listRatings;
-	}
-
-	public void setListRatings(List<Rating> listRatings) {
-		this.listRatings = listRatings;
-	}
-
 	public Integer getId() {
 		return id;
 	}
@@ -177,14 +140,6 @@ public class User {
 		this.state = state;
 	}
 
-	public Certificated getCertificated() {
-		return certificated;
-	}
-
-	public void setCertificated(Certificated certificated) {
-		this.certificated = certificated;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -193,36 +148,6 @@ public class User {
 		this.email = email;
 	}
 
-	public List<Program> getListProgramsByEE() {
-		return listProgramsByEE;
-	}
 
-	public void setListProgramsByEE(List<Program> listProgramsByEE) {
-		this.listProgramsByEE = listProgramsByEE;
-	}
-
-	public List<Program> getListProgramsByPL() {
-		return listProgramsByPL;
-	}
-
-	public void setListProgramsByPL(List<Program> listProgramsByPL) {
-		this.listProgramsByPL = listProgramsByPL;
-	}
-
-	public List<Report> getListReportsByStudent() {
-		return listReportsByStudent;
-	}
-
-	public void setListReportsByStudent(List<Report> listReportsByStudent) {
-		this.listReportsByStudent = listReportsByStudent;
-	}
-
-	public List<Comment> getListComments() {
-		return listComments;
-	}
-
-	public void setListComments(List<Comment> listComments) {
-		this.listComments = listComments;
-	}
 
 }
