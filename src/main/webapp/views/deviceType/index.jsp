@@ -9,9 +9,9 @@
 				<div class="ibox">
 					<div class="ibox-content">
 						<a href="<c:url value='/admin/role/list'/>" class="btn-link">
-							<h2>Manage Role</h2>
+							<h2>Loại Thiết Bị</h2>
 						</a>
-						<button data-toggle="modal" data-target="#newItem"class="btn btn-sm btn-primary">Create New</button>
+						<button data-toggle="modal" data-target="#newItem"class="btn btn-sm btn-primary">Tạo</button>
 						<div class="table-responsive">
 							<table id="tblDepartment"
 								class="table table-bordered table-hover table-striped">
@@ -91,6 +91,6 @@
 			</div>
 		</div>
 		<script
-			src="<c:url value='/resources/default/js/page/role.js'/>"></script>
+			src="<c:url value='/resources/default/js/page/deviceType.js'/>"></script>
 	</tiles:putAttribute>
 </tiles:insertDefinition>

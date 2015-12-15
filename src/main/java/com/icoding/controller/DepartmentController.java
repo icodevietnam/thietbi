@@ -23,11 +23,10 @@ public class DepartmentController extends GenericController {
 
 	@RequestMapping(value = { "/admin/department",
 			"/admin/department/list" }, method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
-	@Secured({ "ROLE_ADMIN", "ROLE_PVC" })
+	@Secured({ "ROLE_ADMIN" })
 	public String displayPage(Model model) {
-		model.addAttribute("pageName", "Manage Department");
-		model.addAttribute("title", "Manage Department");
-		model.addAttribute("countNav", countNotifications());
+		model.addAttribute("pageName", "Phòng ban");
+		model.addAttribute("title", "Phòng ban");
 		return "department/index";
 	}
 

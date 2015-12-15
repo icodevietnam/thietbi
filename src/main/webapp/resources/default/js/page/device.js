@@ -42,7 +42,28 @@ $(function() {
 
 function displayTable() {
 	var dataDepartments = [];
-	$.ajax({
+	dataDepartments.push([
+							"P000001",
+							"Đồng Hồ","Đồng Hồ trong hộp đồng hồ","Đồng Hồ trong hộp đồng hồ","11/11/2015","3",
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	dataDepartments.push([
+							"P000002",
+							"Máy bàn","Máy bàn trong hộp đồng hồ","Máy bàn trong hộp đồng hồ","3/11/2015","80",
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	dataDepartments.push([
+							"P000003",
+							"Laptop","Laptop trong hộp đồng hồ","Laptop trong hộp đồng hồ","4/11/2015","12",
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	/*$.ajax({
 		url : "/project/role/getAll",
 		type : "GET",
 		dataType : "JSON",
@@ -57,7 +78,7 @@ function displayTable() {
 								+ value.id + ")' >Edit</button>",
 						"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 								+ value.id + ")'>Delete</button>" ]);
-			});
+			});*/
 			$('#tblDepartment').dataTable({
 				"bDestroy" : true,
 				"bSort" : true,
@@ -70,17 +91,23 @@ function displayTable() {
 				"aoColumns" : [ {
 					"sTitle" : "No"
 				}, {
-					"sTitle" : "Name"
+					"sTitle" : "Loại Thiết Bị"
 				}, {
-					"sTitle" : "Description"
+					"sTitle" : "Tên"
+				}, {
+					"sTitle" : "Chú Thích"
+				}, {
+					"sTitle" : "Ngày"
+				}, {
+					"sTitle" : "Số lượng"
 				}, {
 					"sTitle" : "Edit"
 				}, {
 					"sTitle" : "Delete"
 				} ]
 			});
-		}
-	});
+/*		}
+	});*/
 }
 
 function editItem(id) {

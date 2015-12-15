@@ -23,11 +23,10 @@ public class ContractController extends GenericController {
 
 	@RequestMapping(value = { "/admin/contract",
 			"/admin/contract/list" }, method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
-	@Secured({ "ROLE_ADMIN", "ROLE_PVC" })
+	@Secured({ "ROLE_ADMIN" })
 	public String displayPage(Model model) {
-		model.addAttribute("pageName", "Manage Contract");
-		model.addAttribute("title", "Manage Contract");
-		model.addAttribute("countNav", countNotifications());
+		model.addAttribute("pageName", "Hợp Đồng");
+		model.addAttribute("title", "Hợp Đồng");
 		return "contract/index";
 	}
 

@@ -44,26 +44,26 @@ function displayTable() {
 	var dataDepartments = [];
 	dataDepartments.push([
 							"1",
-							"Phòng kế toán","Laptop","Góc Trái Phòng",
+							"Phòng kế toán","Phòng kế toán",
 							"<button class='btn btn-sm btn-primary' onclick='editItem("
 									+ "" + ")' >Sửa</button>",
 							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 									+ "" + ")'>Xoá</button>" ]);
 	dataDepartments.push([
 							"2",
-							"Phòng CNTT","CPU","Nằm Góc Trái",
+							"Phòng CNTT","Phòng CNTT",
 							"<button class='btn btn-sm btn-primary' onclick='editItem("
 									+ "" + ")' >Sửa</button>",
 							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 									+ "" + ")'>Xoá</button>" ]);
 	dataDepartments.push([
 							"3",
-							"Phòng Tài Chính","CPU","Nằm kế bên Ông Cường",
+							"Phòng Tài Chính","Phòng Tài Chính",
 							"<button class='btn btn-sm btn-primary' onclick='editItem("
 									+ "" + ")' >Sửa</button>",
 							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 									+ "" + ")'>Xoá</button>" ]);
-	/*$.ajax({
+/*	$.ajax({
 		url : "/project/role/getAll",
 		type : "GET",
 		dataType : "JSON",

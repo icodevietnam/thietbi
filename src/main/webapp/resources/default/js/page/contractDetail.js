@@ -42,7 +42,28 @@ $(function() {
 
 function displayTable() {
 	var dataDepartments = [];
-	$.ajax({
+	dataDepartments.push([
+							"1",
+							"Hợp Đồng Số 1","Laptop",30,
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	dataDepartments.push([
+							"2",
+							"Hợp Đồng Số 2","Đồng Hồ",50,
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	dataDepartments.push([
+							"3",
+							"Hợp Đồng Số 3","CPU",100,
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	/*$.ajax({
 		url : "/project/role/getAll",
 		type : "GET",
 		dataType : "JSON",
@@ -57,7 +78,7 @@ function displayTable() {
 								+ value.id + ")' >Edit</button>",
 						"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 								+ value.id + ")'>Delete</button>" ]);
-			});
+			});*/
 			$('#tblDepartment').dataTable({
 				"bDestroy" : true,
 				"bSort" : true,
@@ -68,19 +89,21 @@ function displayTable() {
 				"aaData" : dataDepartments,
 				"aaSorting" : [],
 				"aoColumns" : [ {
-					"sTitle" : "No"
+					"sTitle" : "Mã"
 				}, {
-					"sTitle" : "Name"
+					"sTitle" : "Mã Hợp Đồng"
 				}, {
-					"sTitle" : "Description"
+					"sTitle" : "Mã Thiết Bị"
+				},{
+					"sTitle" : "Số lượng"
 				}, {
 					"sTitle" : "Edit"
 				}, {
 					"sTitle" : "Delete"
 				} ]
 			});
-		}
-	});
+/*		}
+	});*/
 }
 
 function editItem(id) {

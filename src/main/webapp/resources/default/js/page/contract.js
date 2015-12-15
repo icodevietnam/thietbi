@@ -42,7 +42,28 @@ $(function() {
 
 function displayTable() {
 	var dataDepartments = [];
-	$.ajax({
+	dataDepartments.push([
+							"1",
+							"Hợp Đồng Hoàn Long","Hợp Đồng Hoàn Long",
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	dataDepartments.push([
+							"2",
+							"Hợp Đồng Hợp Nhất","Hợp Đồng Hợp Nhất",
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	dataDepartments.push([
+							"3",
+							"Hợp Đồng Phong Vũ","Hợp Đồng Phong Vũ",
+							"<button class='btn btn-sm btn-primary' onclick='editItem("
+									+ "" + ")' >Sửa</button>",
+							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
+									+ "" + ")'>Xoá</button>" ]);
+	/*$.ajax({
 		url : "/project/role/getAll",
 		type : "GET",
 		dataType : "JSON",
@@ -57,7 +78,7 @@ function displayTable() {
 								+ value.id + ")' >Edit</button>",
 						"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 								+ value.id + ")'>Delete</button>" ]);
-			});
+			});*/
 			$('#tblDepartment').dataTable({
 				"bDestroy" : true,
 				"bSort" : true,
@@ -79,8 +100,8 @@ function displayTable() {
 					"sTitle" : "Delete"
 				} ]
 			});
-		}
-	});
+/*		}
+	});*/
 }
 
 function editItem(id) {

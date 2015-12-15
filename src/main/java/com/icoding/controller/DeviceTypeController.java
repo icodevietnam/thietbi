@@ -25,9 +25,8 @@ public class DeviceTypeController extends GenericController {
 			"/admin/deviceType/list" }, method = RequestMethod.GET, produces = "text/plain;charset=UTF-8")
 	@Secured({ "ROLE_ADMIN", "ROLE_PVC" })
 	public String displayPage(Model model) {
-		model.addAttribute("pageName", "Manage DeviceType");
-		model.addAttribute("title", "Manage DeviceType");
-		model.addAttribute("countNav", countNotifications());
+		model.addAttribute("pageName", "Loại Thiết Bị");
+		model.addAttribute("title", "Loại Thiết Bị");
 		return "deviceType/index";
 	}
 
