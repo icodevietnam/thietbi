@@ -2714,7 +2714,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 
 		if(this._aspectRatio || forceAspectRatio) {
 			// We want to create an enclosing box whose aspect ration is the requested one
-			// First, compute the "projected" size for each dimension based on the aspect ratio and other dimension
+			// First, compute the "thietbied" size for each dimension based on the aspect ratio and other dimension
 			pMinWidth = b.minHeight * this.aspectRatio;
 			pMinHeight = b.minWidth / this.aspectRatio;
 			pMaxWidth = b.maxHeight * this.aspectRatio;

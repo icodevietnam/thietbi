@@ -3,38 +3,38 @@ $(function() {
 	
 	$("#newItemForm").validate({
 		rules : {
-			roleName:{
+			name:{
 				required:true
 			},
-			roleDescription:{
+			description:{
 				required:true
 			}
 		},
 		messages : {
-			roleName:{
-				required:"Name is not blank"
+			name:{
+				required:"Tên is not blank"
 			},
-			roleDescription:{
-				required:"Description is not blank"
+			description:{
+				required:"Chú thích is not blank"
 			}
 		},
 	});
 	
 	$("#updateItemForm").validate({
 		rules : {
-			roleName:{
+			name:{
 				required:true
 			},
-			roleDescription:{
+			description:{
 				required:true
 			}
 		},
 		messages : {
-			roleName:{
-				required:"Name is not blank"
+			name:{
+				required:"Tên is not blank"
 			},
-			roleDescription:{
-				required:"Description is not blank"
+			description:{
+				required:"Chú Thích is not blank"
 			}
 		},
 	});
@@ -42,29 +42,8 @@ $(function() {
 
 function displayTable() {
 	var dataDepartments = [];
-	dataDepartments.push([
-							"1",
-							"Phòng kế toán","Phòng kế toán",
-							"<button class='btn btn-sm btn-primary' onclick='editItem("
-									+ "" + ")' >Sửa</button>",
-							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
-									+ "" + ")'>Xoá</button>" ]);
-	dataDepartments.push([
-							"2",
-							"Phòng CNTT","Phòng CNTT",
-							"<button class='btn btn-sm btn-primary' onclick='editItem("
-									+ "" + ")' >Sửa</button>",
-							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
-									+ "" + ")'>Xoá</button>" ]);
-	dataDepartments.push([
-							"3",
-							"Phòng Tài Chính","Phòng Tài Chính",
-							"<button class='btn btn-sm btn-primary' onclick='editItem("
-									+ "" + ")' >Sửa</button>",
-							"<button class='btn btn-sm btn-danger' onclick='deleteItem("
-									+ "" + ")'>Xoá</button>" ]);
-/*	$.ajax({
-		url : "/project/role/getAll",
+	$.ajax({
+		url : "/thietbi/department/getAll",
 		type : "GET",
 		dataType : "JSON",
 		success : function(response) {
@@ -78,7 +57,7 @@ function displayTable() {
 								+ value.id + ")' >Edit</button>",
 						"<button class='btn btn-sm btn-danger' onclick='deleteItem("
 								+ value.id + ")'>Delete</button>" ]);
-			});*/
+			});
 			$('#tblDepartment').dataTable({
 				"bDestroy" : true,
 				"bSort" : true,
@@ -89,33 +68,33 @@ function displayTable() {
 				"aaData" : dataDepartments,
 				"aaSorting" : [],
 				"aoColumns" : [ {
-					"sTitle" : "No"
+					"sTitle" : "Số"
 				}, {
-					"sTitle" : "Name"
+					"sTitle" : "Tên"
 				}, {
-					"sTitle" : "Description"
+					"sTitle" : "Chú thích"
 				}, {
-					"sTitle" : "Edit"
+					"sTitle" : "Sửa"
 				}, {
-					"sTitle" : "Delete"
+					"sTitle" : "Xoá"
 				} ]
 			});
-/*		}
-	});*/
+		}
+	});
 }
 
 function editItem(id) {
 	$.ajax({
-		url : "/project/role/get",
+		url : "/thietbi/department/get",
 		type : "GET",
 		data : {
 			itemId : id
 		},
 		dataType : "JSON",
 		success : function(response) {
-			$("#updateItemForm .roleId").val(response.id);
-			$("#updateItemForm .roleName").val(response.name);
-			$("#updateItemForm .roleDescription").val(response.description);
+			$("#updateItemForm .departmentId").val(response.id);
+			$("#updateItemForm .departmentName").val(response.name);
+			$("#updateItemForm .departmentDescription").val(response.description);
 			$("#updateItem").modal("show");
 		}
 	});
@@ -124,7 +103,7 @@ function editItem(id) {
 function deleteItem(id) {
 	if (confirm("Are you sure you want to proceed?") == true) {
 		$.ajax({
-			url : "/project/role/delete",
+			url : "/thietbi/department/delete",
 			type : "POST",
 			data : {
 				itemId : id
@@ -139,24 +118,24 @@ function deleteItem(id) {
 
 function editedItem() {
 	if($("#updateItemForm").valid()){
-		var roleId = $("#updateItemForm .roleId").val();
-		var roleName = $("#updateItemForm .roleName").val();
-		var roleDescription = $("#updateItemForm .roleDescription").val();
+		var departmentId = $("#updateItemForm .departmentId").val();
+		var departmentName = $("#updateItemForm .departmentName").val();
+		var departmentDescription = $("#updateItemForm .departmentDescription").val();
 		$.ajax({
-			url : "/project/role/update",
+			url : "/thietbi/department/update",
 			type : "POST",
 			data : {
-				roleId : roleId,
-				roleName : roleName,
-				roleDescription : roleDescription
+				departmentId : departmentId,
+				departmentName : departmentName,
+				departmentDescription : departmentDescription
 			},
 			dataType : "JSON",
 			success : function(response) {
 			},complete:function(){
 				displayTable();
-				$("#updateItemForm .roleId").val(" ");
-				$("#updateItemForm .roleName").val(" ");
-				$("#updateItemForm .roleDescription").val(" ");
+				$("#updateItemForm .departmentId").val(" ");
+				$("#updateItemForm .departmentName").val(" ");
+				$("#updateItemForm .departmentDescription").val(" ");
 				$("#updateItem").modal("hide");
 			}
 		});
@@ -165,14 +144,14 @@ function editedItem() {
 
 function insertItem() {
 	if($("#newItemForm").valid()){
-		var roleName = $("#roleName").val();
-		var roleDescription = $("#roleDescription").val();
+		var departmentName = $("#departmentName").val();
+		var departmentDescription = $("#departmentDescription").val();
 		$.ajax({
-			url : "/project/role/new",
+			url : "/thietbi/department/new",
 			type : "POST",
 			data : {
-				roleName : roleName,
-				roleDescription : roleDescription
+				departmentName : departmentName,
+				departmentDescription : departmentDescription
 			},
 			dataType : "JSON",
 			success : function(response) {
@@ -180,8 +159,8 @@ function insertItem() {
 			complete : function(){
 				displayTable();
 				$("#newItem").modal("hide");
-				$("#roleName").val(" ");
-				$("#roleDescription").val(" ");
+				$("#departmentName").val(" ");
+				$("#departmentDescription").val(" ");
 			}
 		});
 	}

@@ -6,7 +6,7 @@ $(function(){
 			oldpassword:{
 				required:true,
 				remote:{
-					url:'/project/user/checkPasswordExist',
+					url:'/thietbi/user/checkPasswordExist',
 					type:'GET',
 					data:{
 						oldpassword:function(){

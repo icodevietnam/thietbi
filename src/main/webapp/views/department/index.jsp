@@ -8,7 +8,7 @@
 			<div class="col-lg-8">
 				<div class="ibox">
 					<div class="ibox-content">
-						<a href="<c:url value='/admin/role/list'/>" class="btn-link">
+						<a href="<c:url value='/admin/department/list'/>" class="btn-link">
 							<h2>Quản lý Phòng Ban</h2>
 						</a>
 						<button data-toggle="modal" data-target="#newItem"class="btn btn-sm btn-primary">Tạo mới</button>
@@ -37,13 +37,13 @@
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">Tên</label>
 							<div class="col-sm-10">
-							<input type="text" class="form-control" id="roleName" name="roleName" >
+							<input type="text" class="form-control" id="departmentName" name="name" >
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="name" class="col-sm-2 control-label">Chú thích</label>
 							<div class="col-sm-10">
-							<input type="text" class="form-control" id="roleDescription" name="roleDescription" >
+							<input type="text" class="form-control" id="departmentDescription" name="description" >
 							</div>
 						</div>
 					</div>
@@ -68,17 +68,17 @@
 					</div>
 					<form id="updateItemForm" class="form-horizontal" method="POST">
 					<div class="modal-body">
-								<input type="text" class="roleId form-control hide" id="roleId" name="roleId" >
+								<input type="text" class="departmentId form-control hide" id="departmentId" name="departmentId" >
 								<div class="form-group">
 									<label for="name" class="col-sm-2 control-label">Tên</label>
 									<div class="col-sm-10">
-										<input type="text" class="roleName form-control" id="roleName" name="roleName" >
+										<input type="text" class="departmentName form-control" id="departmentName" name="name" >
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="name" class="col-sm-2 control-label">Chú thích</label>
 									<div class="col-sm-10">
-										<input type="text" class="roleDescription form-control" id="roleDescription" name="roleDescription" >
+										<input type="text" class="departmentDescription form-control" id="departmentDescription" name="description" >
 									</div>
 								</div>
 					</div>

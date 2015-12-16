@@ -43,7 +43,12 @@ public class DeviceTypeController extends GenericController {
 	public String deleteDeviceType(@RequestParam(value = "itemId") String itemId) {
 		Integer id = Integer.parseInt(itemId);
 		DeviceType deviceType = deviceTypeService.get(id);
-		return "false";
+		try {
+			deviceTypeService.remove(deviceType);
+			return "true";
+		} catch (Exception e) {
+			return "false";
+		}
 	}
 
 	@RequestMapping(value = "/deviceType/new", method = RequestMethod.POST)

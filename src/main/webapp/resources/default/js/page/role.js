@@ -43,7 +43,7 @@ $(function() {
 function displayTable() {
 	var dataDepartments = [];
 	$.ajax({
-		url : "/project/role/getAll",
+		url : "/thietbi/role/getAll",
 		type : "GET",
 		dataType : "JSON",
 		success : function(response) {
@@ -85,7 +85,7 @@ function displayTable() {
 
 function editItem(id) {
 	$.ajax({
-		url : "/project/role/get",
+		url : "/thietbi/role/get",
 		type : "GET",
 		data : {
 			itemId : id
@@ -103,7 +103,7 @@ function editItem(id) {
 function deleteItem(id) {
 	if (confirm("Are you sure you want to proceed?") == true) {
 		$.ajax({
-			url : "/project/role/delete",
+			url : "/thietbi/role/delete",
 			type : "POST",
 			data : {
 				itemId : id
@@ -122,7 +122,7 @@ function editedItem() {
 		var roleName = $("#updateItemForm .roleName").val();
 		var roleDescription = $("#updateItemForm .roleDescription").val();
 		$.ajax({
-			url : "/project/role/update",
+			url : "/thietbi/role/update",
 			type : "POST",
 			data : {
 				roleId : roleId,
@@ -147,7 +147,7 @@ function insertItem() {
 		var roleName = $("#roleName").val();
 		var roleDescription = $("#roleDescription").val();
 		$.ajax({
-			url : "/project/role/new",
+			url : "/thietbi/role/new",
 			type : "POST",
 			data : {
 				roleName : roleName,

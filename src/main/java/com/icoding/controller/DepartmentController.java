@@ -43,7 +43,12 @@ public class DepartmentController extends GenericController {
 	public String deleteDepartment(@RequestParam(value = "itemId") String itemId) {
 		Integer id = Integer.parseInt(itemId);
 		Department department = departmentService.get(id);
-		return "false";
+		try {
+			departmentService.remove(department);
+			return "true";
+		} catch (Exception e) {
+			return "false";
+		}
 	}
 
 	@RequestMapping(value = "/department/new", method = RequestMethod.POST)

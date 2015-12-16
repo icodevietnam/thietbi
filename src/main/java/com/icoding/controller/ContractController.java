@@ -43,7 +43,12 @@ public class ContractController extends GenericController {
 	public String deleteContract(@RequestParam(value = "itemId") String itemId) {
 		Integer id = Integer.parseInt(itemId);
 		Contract contract = contractService.get(id);
-		return "false";
+		try {
+			contractService.remove(contract);
+			return "true";
+		} catch (Exception e) {
+			return "false";
+		}
 	}
 
 	@RequestMapping(value = "/contract/new", method = RequestMethod.POST)

@@ -8,7 +8,7 @@
 			<div class="col-lg-8">
 				<div class="ibox">
 					<div class="ibox-content">
-						<a href="<c:url value='/admin/role/list'/>" class="btn-link">
+						<a href="<c:url value='/admin/deviceType/list'/>" class="btn-link">
 							<h2>Loại Thiết Bị</h2>
 						</a>
 						<button data-toggle="modal" data-target="#newItem"class="btn btn-sm btn-primary">Tạo</button>
@@ -30,26 +30,26 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="myModalLabel">Add Role</h4>
+						<h4 class="modal-title" id="myModalLabel">Thêm</h4>
 					</div>
 					<form id="newItemForm" class="form-horizontal" method="POST">
 					<div class="modal-body">
 						<div class="form-group">
-							<label for="name" class="col-sm-2 control-label">Name</label>
+							<label for="name" class="col-sm-2 control-label">Tên</label>
 							<div class="col-sm-10">
-							<input type="text" class="form-control" id="roleName" name="roleName" >
+							<input type="text" class="form-control" id="deviceTypeName" name="deviceTypeName" >
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="name" class="col-sm-2 control-label">Description</label>
+							<label for="name" class="col-sm-2 control-label">Chú thích</label>
 							<div class="col-sm-10">
-							<input type="text" class="form-control" id="roleDescription" name="roleDescription" >
+							<input type="text" class="form-control" id="deviceTypeDescription" name="deviceTypeDescription" >
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" onclick="insertItem();" class="btn btn-primary">Save</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" onclick="insertItem();" class="btn btn-primary">Lưu</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
 					</div>
 					</form>
 				</div>
@@ -64,27 +64,27 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="myModalLabel">Edit Role</h4>
+						<h4 class="modal-title" id="myModalLabel">Sửa</h4>
 					</div>
 					<form id="updateItemForm" class="form-horizontal" method="POST">
 					<div class="modal-body">
-								<input type="text" class="roleId form-control hide" id="roleId" name="roleId" >
+								<input type="text" class="deviceTypeId form-control hide" id="deviceTypeId" name="deviceTypeId" >
 								<div class="form-group">
-									<label for="name" class="col-sm-2 control-label">Name</label>
+									<label for="name" class="col-sm-2 control-label">Tên</label>
 									<div class="col-sm-10">
-										<input type="text" class="roleName form-control" id="roleName" name="roleName" >
+										<input type="text" class="deviceTypeName form-control" id="deviceTypeName" name="deviceTypeName" >
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="name" class="col-sm-2 control-label">Description</label>
+									<label for="name" class="col-sm-2 control-label">Chú Thích</label>
 									<div class="col-sm-10">
-										<input type="text" class="roleDescription form-control" id="roleDescription" name="roleDescription" >
+										<input type="text" class="deviceTypeDescription form-control" id="deviceTypeDescription" name="deviceTypeDescription" >
 									</div>
 								</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" onclick="editedItem();" class="btn btn-primary">Edit</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" onclick="editedItem();" class="btn btn-primary">Sửa</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
 					</div>
 					</form>
 				</div>
